@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -106,6 +106,11 @@ vim.o.number = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
+
+vim.opt.tabstop = 2 -- Set the width of a hard tab character to 2 columns
+vim.opt.shiftwidth = 2 -- Set the number of spaces for auto-indentation
+vim.opt.softtabstop = 2 -- Set the number of spaces a <Tab> counts for when typing
+vim.opt.expandtab = true -- Use spaces instead of tab characters
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
@@ -772,7 +777,8 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
